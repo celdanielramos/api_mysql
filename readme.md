@@ -40,11 +40,10 @@ The name of the file is: test.postman_collection.json
 
 ## Questions
 
-- This endpoint could take a long time to run if the amount of transaction included in the range is huge. Also, maybe it would be paginated the massive update to not consume all the memory. For example, Sequelize died trying to run a massive update.
+- This endpoint could take a long time to run if the amount of transaction included in the range is huge. Also, the massive update could be paginated to not consume all the memory (batch process).
 
-- The bottleneck is the relation with the transactions. So, we could answer quickly to the user with the "payment_note_uuid" and send a message to a queue that process all the transactions and mark the paymentnote as completed. When this process finish, we could ping back the user saying to let him know the process has finished.
+- The bottleneck is the relation with the transactions. So, we could answer quickly to the user with a "payment_note_uuid" and send a message to a queue that process all the transactions and mark the paymentnote as completed. When this process finish, we could ping back the user to let him know the process has finished.
 
 - The things that would change are:
--- implement a client for a queue service
--- remove the code from the POST endpoint related with updating the transactions and the paymentnotes. This has to be managed by a worker in the queue.
-
+    - implement a client for a queue service
+    - remove the code from the POST endpoint related with updating the transactions and the paymentnotes. This has to be managed by a worker in the queue.
