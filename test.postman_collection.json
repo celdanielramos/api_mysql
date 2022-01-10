@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "7fe77626-405d-400d-89c0-4bdae72453e6",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "transaction/:uuid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/transaction/00001e4d-335f-4625-aaa1-7c7bf2c74ea0",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"transaction",
+						"00001e4d-335f-4625-aaa1-7c7bf2c74ea0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/transaction?offset=2&limit=2",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"transaction"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paymentnote",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/paymentnote",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paymentnote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paymentnote/:uuid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/paymentnote/090e11cc-f1a0-4fc4-a8cc-bd861b89ee0b",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paymentnote",
+						"090e11cc-f1a0-4fc4-a8cc-bd861b89ee0b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paymentnote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"period_from\": \"2021-07-01\",\r\n    \"period_to\": \"2021-08-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/paymentnote/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paymentnote",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
